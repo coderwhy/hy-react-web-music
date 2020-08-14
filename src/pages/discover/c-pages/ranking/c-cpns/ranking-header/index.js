@@ -3,6 +3,7 @@ import { useSelector, shallowEqual } from "react-redux";
 
 import { formatMonthDay } from "@/utils/format-utils";
 
+import HYSongOperationBar from '@/components/song-operation-bar';
 import {
   RankingHeaderWrapper
 } from './style';
@@ -27,20 +28,10 @@ export default memo(function HYRankingHeader() {
           <div>最近更新：{formatMonthDay(topInfo.updateTime)}</div>
           <div className="update-f">（{"每日更新:TODO"}）</div>
         </div>
-        <div className="operation">
-          <a href="/abc" className="item sprite_button">
-            <i className="icon favor-icon sprite_button">({topInfo.subscribedCount})</i>
-          </a>
-          <a href="/abc" className="item sprite_button">
-            <i className="icon share-icon sprite_button">({topInfo.shareCount})</i>
-          </a>
-          <a href="/abc" className="item sprite_button">
-            <i className="icon download-icon sprite_button">下载</i>
-          </a>
-          <a href="/abc" className="item sprite_button">
-            <i className="icon comment-icon sprite_button">({topInfo.commentCount})</i>
-          </a>
-        </div>
+        <HYSongOperationBar favorTitle={`(${topInfo.subscribedCount})`}
+                            shareTitle={`(${topInfo.shareCount})`}
+                            downloadTitle="下载"
+                            commentTitle={`(${topInfo.commentCount})`}/>
       </div>
     </RankingHeaderWrapper>
   )

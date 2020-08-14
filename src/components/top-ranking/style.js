@@ -43,6 +43,7 @@ export const TopRankingWrapper = styled.div`
 
   .list {
     .list-item {
+      position: relative;
       display: flex;
       align-items: center;
       height: 32px;
@@ -60,6 +61,41 @@ export const TopRankingWrapper = styled.div`
 
       .name {
         color: #000;
+      }
+
+      .operate {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        right: 0;
+        display: none;
+
+        .btn {
+          width: 17px;
+          height: 17px;
+          margin-right: 8px;
+          cursor: pointer;
+        }
+
+        .play {
+          background-position: -267px -268px;
+        }
+
+        .addto {
+          position: relative;
+          top: 2px;
+          background-position: 0 -700px;
+        }
+
+        .favor {
+          background-position: -297px -268px;
+        }
+      }
+
+      &:hover {
+        .operate {
+          display: block;
+        }
       }
     }
   }

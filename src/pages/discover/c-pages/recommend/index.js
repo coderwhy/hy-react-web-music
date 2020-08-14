@@ -5,7 +5,7 @@ import HYHotRecommend from './c-cpns/hot-recommend';
 import HYNewAlbum from './c-cpns/new-album';
 import HYRankingList from './c-cpns/ranking-list';
 import HYUserLogin from './c-cpns/user-login';
-import HYSettleSonger from './c-cpns/settle-songer';
+import HYSettleSinger from './c-cpns/settle-singer';
 import HYHotRadio from './c-cpns/hot-radio';
 import {
   RecommendWraper,
@@ -26,7 +26,7 @@ export default memo(function HYRecommend() {
         </RecommendLeft>
         <RecommendRight>
           <HYUserLogin />
-          <HYSettleSonger />
+          <HYSettleSinger />
           <HYHotRadio />
         </RecommendRight>
       </Content>

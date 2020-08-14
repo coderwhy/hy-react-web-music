@@ -47,38 +47,5 @@ export const RankingHeaderWrapper = styled.div`
         color: #999;
       }
     }
-
-    .operation {
-      .item {
-        display: inline-block;
-        height: 31px;
-        margin-right: 6px;
-        padding-right: 5px;
-        background-position: right -1020px;
-        .icon {
-          display: inline-block;
-          height: 31px;
-          line-height: 31px;
-          padding: 0 7px 0 28px;
-          font-family: simsun;
-        }
-
-        .favor-icon {
-          background-position: 0 -977px;
-        }
-
-        .share-icon {
-          background-position: 0 -1225px;
-        }
-
-        .download-icon {
-          background-position: 0 -2761px;
-        }
-
-        .comment-icon {
-          background-position: 0 -1465px;
-        }
-      }
-    }
   }
 `

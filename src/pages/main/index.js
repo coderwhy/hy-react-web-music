@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, Suspense } from 'react';
 import { HashRouter } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 
@@ -6,15 +6,17 @@ import routes from "@/router"
 
 import HYAppHeader from '@/components/app-header';
 import HYAppFooter from '@/components/app-footer';
+import HYAppPlayBar from '@/pages/player/app-play-bar';
 
 export default memo(function HYMain() {
   return (
-    <div>
-      <HashRouter>
-        <HYAppHeader />
+    <HashRouter>
+      <HYAppHeader />
+      <Suspense fallback={<div>loading</div>}>
         {renderRoutes(routes)}
-        <HYAppFooter />
-      </HashRouter>
-    </div>
+      </Suspense>
+      <HYAppFooter />
+      <HYAppPlayBar/>
+    </HashRouter>
   )
 })

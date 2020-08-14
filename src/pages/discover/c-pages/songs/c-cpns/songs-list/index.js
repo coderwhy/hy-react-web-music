@@ -1,10 +1,11 @@
 import React, { useState, memo } from 'react';
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 
+import { PER_PAGE_NUMBER } from '../../store/constants';
 import { getSongList } from "../../store/actionCreators";
 
-import { Pagination } from 'antd';
 import HYThemeCover from '@/components/theme-cover';
+import HYPagination from '@/components/pagination';
 import {
   SongListWrapper
 } from "./style";
@@ -20,17 +21,6 @@ export default memo(function HYSongsList() {
   const songList = categorySongs.playlists || [];
   const total = categorySongs.total || 0;
   const dispatch = useDispatch();
-
-  // render function
-  function itemRender(current, type, originalElement) {
-    if (type === 'prev') {
-      return <button className="control prev"> &lt; 上一页</button>;
-    }
-    if (type === 'next') {
-      return <button className="control next">上一页 &gt;</button>;
-    }
-    return originalElement;
-  }
 
   function onPageChange(page, pageSize) {
     setCurrentPage(page);
@@ -48,15 +38,10 @@ export default memo(function HYSongsList() {
           })
         }
       </div>
-      <Pagination className="pagination"
-        size="small"
-        current={currentPage}
-        defaultCurrent={1}
-        pageSize={35}
-        total={total}
-        showSizeChanger={false}
-        itemRender={itemRender}
-        onChange={onPageChange} />
+      <HYPagination currentPage={currentPage} 
+                    total={total} 
+                    pageSize={PER_PAGE_NUMBER}
+                    onPageChange={onPageChange}/>
     </SongListWrapper>
   )
 })

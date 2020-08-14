@@ -45,7 +45,7 @@ export const getRadioRecommend = (currentId) => {
 
 export const getRadios = (currentId, offset) => {
   return dispatch => {
-    getDjRadios(currentId, offset).then(res => {
+    getDjRadios(currentId, 30, offset).then(res => {
       dispatch(changeRadiosAction(res));
     })
   }

@@ -9,7 +9,7 @@ const defaultState = Map({
   topNewList: {},
   topOriginList: {},
 
-  settleSongs: [],
+  settleSings: [],
 })
 
 export default (state = defaultState, action) => {
@@ -27,7 +27,7 @@ export default (state = defaultState, action) => {
     case actionTypes.CHANGE_ORIGIN_LIST:
       return state.set("topOriginList", action.topOriginList);
     case actionTypes.CHANGE_SETTLE_SONGER:
-      return state.set("settleSongs", action.settleSongs)
+      return state.set("settleSings", action.settleSings)
     default:
       return state;
   }

@@ -42,7 +42,7 @@ export default memo(function HYSongsCategory() {
                     item.subs.map(sItem => {
                       return (
                         <div className="item" key={sItem.name}>
-                          <a href="avascript:;" onClick={e => selectCategory(sItem.name)}>{sItem.name}</a>
+                          <a href={() => false} onClick={e => selectCategory(sItem.name)}>{sItem.name}</a>
                           <span className="divider">|</span>
                         </div>
                       )

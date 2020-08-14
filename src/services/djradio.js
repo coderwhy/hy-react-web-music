@@ -15,11 +15,12 @@ export function getDjRadioRecommend(type) {
   })
 }
 
-export function getDjRadios(cateId, offset) {
+export function getDjRadios(cateId, limit, offset) {
   return request({
     url: "/dj/radio/hot",
     params: {
       cateId,
+      limit,
       offset
     }
   })

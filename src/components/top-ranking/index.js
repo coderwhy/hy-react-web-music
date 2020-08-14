@@ -1,4 +1,7 @@
 import React, { memo } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { getSongDetailAction } from '@/pages/player/store';
 
 import {
   getSizeImage
@@ -9,8 +12,17 @@ import {
 } from "./style";
 
 export default memo(function HYTopRanking(props) {
+  // props and state
   const { info } = props;
   const tracks = (info.tracks && info.tracks.slice(0, 10)) || [];
+
+  // redux hooks
+  const dispatch = useDispatch();
+
+  // handle code
+  const playItem = (id) => {
+    dispatch(getSongDetailAction(id));
+  };
 
   return (
     <TopRankingWrapper>
@@ -34,6 +46,11 @@ export default memo(function HYTopRanking(props) {
               <div key={item.id} className="list-item">
                 <div className="rank">{index + 1}</div>
                 <div className="name">{item.name}</div>
+                <div className="operate">
+                  <button className="sprite_02 btn play" onClick={e => playItem(item.id)}></button>
+                  <button className="sprite_icon2 btn addto"></button>
+                  <button className="sprite_02 btn favor"></button>
+                </div>
               </div>
             )
           })

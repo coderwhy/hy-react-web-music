@@ -28,7 +28,6 @@ export default memo(function HYNewAlbum(props) {
   return (
     <AlbumWrapper>
       <HYThemeHeaderRCM title="新碟上架" />
-
       <div className="content">
         <div className="arrow arrow-left sprite_02" 
             onClick={e => carouselRef.current.prev()}></div>

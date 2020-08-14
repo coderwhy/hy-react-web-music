@@ -1,4 +1,5 @@
 import * as actionTypes from './constants';
+import { PER_PAGE_NUMBER } from './constants';
 
 import {
   getSongCategory,
@@ -38,7 +39,7 @@ export const getSongList = (page) => {
     const name = getState().getIn(["songs", "currentCategory"]);
 
     // 2.获取数据
-    getSongCategoryList(name, page * 35).then(res => {
+    getSongCategoryList(name, page * PER_PAGE_NUMBER).then(res => {
       dispatch(changeSongListAction(res));
     })
   }

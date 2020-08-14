@@ -15,6 +15,11 @@ const changeTopAlbumAction = (res) => ({
   topAlbums: res.albums
 })
 
+const changeTopTotalAction = (total) => ({
+  type: actionTypes.CHANGE_TOP_TOTAL,
+  total: total
+})
+
 export const getHotAlbumsAction = () => {
   return dispatch => {
     getHotAlbums().then(res => {
@@ -23,10 +28,11 @@ export const getHotAlbumsAction = () => {
   }
 }
 
-export const getTopAlbumsAction = () => {
+export const getTopAlbumsAction = (page) => {
   return dispatch => {
-    getTopAlbums(30, 0).then(res => {
+    getTopAlbums(30, (page-1) * 30).then(res => {
       dispatch(changeTopAlbumAction(res));
+      dispatch(changeTopTotalAction(res.total));
     })
   }
 }

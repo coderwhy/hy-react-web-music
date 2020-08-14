@@ -38,9 +38,9 @@ const changeOriginListAction = (res) => ({
   topOriginList: res.playlist
 })
 
-const changeSettleSongsAction = (res) => ({
+const changeSettleSingsAction = (res) => ({
   type: actionTypes.CHANGE_SETTLE_SONGER,
-  settleSongs: res.artists
+  settleSings: res.artists
 })
 
 
@@ -91,7 +91,7 @@ export const getTopData = (idx) => {
 export const getSettleSingers = () => {
   return dispath => {
     getArtistList(5, 5001).then(res => {
-      dispath(changeSettleSongsAction(res))
+      dispath(changeSettleSingsAction(res))
     })
   }
 }
