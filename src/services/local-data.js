@@ -135,16 +135,13 @@ export const artistCategories = [
       {
         name: "推荐歌手",
         type: 1,
-        now: false,
         url: "/discover/artist",
         id: 0
       },
       {
         name: "入驻歌手",
         type: 2,
-        now: true,
         url: "/discover/artist?cat=5001",
-        id: 5001,
         dataPath: "/artist/list?cat=5001"
       }
     ]

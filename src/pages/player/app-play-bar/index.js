@@ -88,7 +88,6 @@ export default memo(function HYAppPlaybar() {
     const finalIndex = i - 1;
     if (finalIndex !== currentLyricIndex) {
       dispatch(changeCurrentLyricIndexAction(finalIndex));
-      console.log(currentLyrics[finalIndex]);
       message.open({
         content: currentLyrics[finalIndex].content,
         key: "lyric",

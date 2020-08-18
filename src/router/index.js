@@ -43,7 +43,7 @@ export default [
         path: "/discover",
         exact: true,
         render: () => (
-          <Redirect to={"/discover/recommend"}/>
+          <Redirect to={"/discover/artist"}/>
         )
       },
       {
