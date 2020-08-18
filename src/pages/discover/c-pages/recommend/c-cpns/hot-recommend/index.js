@@ -1,5 +1,6 @@
-import React, { useEffect, memo } from 'react';
+import React, { useEffect, memo, useCallback } from 'react';
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { useHistory } from 'react-router-dom';
 
 import {
   getRecommend
@@ -18,14 +19,22 @@ export default memo(function HYHotRecommend() {
     recommends: state.getIn(["recommend", "hotRecommends"])
   }), shallowEqual);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getRecommend())
   }, [dispatch]);
 
+  const keywordClick = useCallback((keyword) => {
+    history.push({pathname: "/discover/songs", cat: keyword});
+  }, [history]);
+
   return (
     <RecommendWrapper>
-      <HYThemeHeaderRCM title="热门推荐" keywords={["华语", "流行", "摇滚", "民谣", "电子"]}/>
+      <HYThemeHeaderRCM title="热门推荐" 
+                        keywords={["华语", "流行", "摇滚", "民谣", "电子"]}
+                        moreLink="/discover/songs"
+                        keywordClick={keywordClick}/>
       <div className="recommend-list">
         {
           state.recommends.slice(0, 8).map((item, index) => {

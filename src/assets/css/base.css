@@ -127,3 +127,8 @@ body, textarea, select, input, button {
   background-color: rgba(0, 0, 0, .5);
   color: #fff;
 }
+
+span:hover.link {
+  text-decoration: underline;
+  cursor: pointer;
+}

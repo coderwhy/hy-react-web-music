@@ -26,7 +26,7 @@ export default memo(function HYSongsCategory() {
     <CategoryWrapper>
       <div className="arrow sprite_icon"></div>
       <div className="all">
-        <a href="/#" onClick={e => selectCategory("全部")}>全部风格</a>
+        <span className="link" onClick={e => selectCategory("全部")}>全部风格</span>
       </div>
       <div className="category">
         {
@@ -42,7 +42,7 @@ export default memo(function HYSongsCategory() {
                     item.subs.map(sItem => {
                       return (
                         <div className="item" key={sItem.name}>
-                          <a href={() => false} onClick={e => selectCategory(sItem.name)}>{sItem.name}</a>
+                          <span className="link" onClick={e => selectCategory(sItem.name)}>{sItem.name}</span>
                           <span className="divider">|</span>
                         </div>
                       )

@@ -23,12 +23,19 @@ export const TopRankingWrapper = styled.div`
     .info {
       margin: 5px 0 0 10px;
 
+      a {
+        font-size: 14px;
+        color: #333;
+        font-weight: 700;
+      }
+
       .btn {
         display: inline-block;
         text-indent: -9999px;
         width: 22px;
         height: 22px;
         margin: 8px 10px 0 0;
+        cursor: pointer;
       }
 
       .play {
@@ -59,38 +66,48 @@ export const TopRankingWrapper = styled.div`
         font-size: 16px;
       }
 
-      .name {
+      .info {
         color: #000;
-      }
-
-      .operate {
-        position: absolute;
+        width: 170px;
+        height: 17px;
+        line-height: 17px;
         display: flex;
-        align-items: center;
-        right: 0;
-        display: none;
+        justify-content: space-between;
 
-        .btn {
-          width: 17px;
-          height: 17px;
-          margin-right: 8px;
-          cursor: pointer;
+        .name {
+          flex: 1;
         }
 
-        .play {
-          background-position: -267px -268px;
-        }
+        .operate {
+          display: flex;
+          align-items: center;
+          display: none;
+          width: 82px;
 
-        .addto {
-          position: relative;
-          top: 2px;
-          background-position: 0 -700px;
-        }
+          .btn {
+            width: 17px;
+            height: 17px;
+            margin-left: 8px;
+            cursor: pointer;
+          }
 
-        .favor {
-          background-position: -297px -268px;
+          .play {
+            background-position: -267px -268px;
+          }
+
+          .addto {
+            position: relative;
+            top: 2px;
+            background-position: 0 -700px;
+          }
+
+          .favor {
+            background-position: -297px -268px;
+          }
         }
       }
+
+      
 
       &:hover {
         .operate {

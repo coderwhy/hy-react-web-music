@@ -1,9 +1,11 @@
 import React, { useEffect, memo } from 'react';
 import { useDispatch } from "react-redux";
+import { useLocation } from 'react-router-dom';
 
 import { 
   getCategory,
-  getSongList
+  getSongList,
+  changeCurrentCategoryAction
 } from "./store/actionCreators";
 
 import HYSongsHeader from "./c-cpns/songs-header";
@@ -15,6 +17,11 @@ import {
 export default memo(function HYSongs() {
   // redux
   const dispatch = useDispatch();
+  const cat = useLocation().cat;
+
+  useEffect(() => {
+    dispatch(changeCurrentCategoryAction(cat));
+  }, [dispatch, cat]);
 
   // hooks
   useEffect(() => {

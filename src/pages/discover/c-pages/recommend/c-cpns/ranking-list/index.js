@@ -29,7 +29,7 @@ export default memo(function HYRankingList() {
 
   return (
     <RankingWrapper>
-      <HYThemeHeaderRCM title="榜单" />
+      <HYThemeHeaderRCM title="榜单" moreLink="/discover/ranking"/>
       <div className="tops">
         <HYTopRanking info={state.topUpList}/>
         <HYTopRanking info={state.topNewList}/>
