@@ -1,7 +1,7 @@
-import { fromJS } from "immutable";
+import { Map } from "immutable";
 import * as actionTypes from "./constants";
 
-const defaultState = fromJS({
+const defaultState = Map({
   category: [],
   currentCategory: "全部",
   categorySongs: {}
