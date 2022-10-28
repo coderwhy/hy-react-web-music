@@ -14,7 +14,7 @@ export function getHotRecommend() {
 
 export function getNewAlbum(limit, offset) {
   return request({
-    url: "/top/album",
+    url: "/album/new",
     params: {
       limit,
       offset
@@ -22,11 +22,11 @@ export function getNewAlbum(limit, offset) {
   })
 }
 
-export function getTopList(idx) {
+export function getTopList(id) {
   return request({
-    url: "/top/list",
+    url: "/playlist/detail",
     params: {
-      idx
+      id
     }
   })
 }

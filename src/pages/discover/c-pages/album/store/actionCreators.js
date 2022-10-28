@@ -33,6 +33,8 @@ export const getTopAlbumsAction = (page) => {
     getTopAlbums(30, (page-1) * 30).then(res => {
       dispatch(changeTopAlbumAction(res));
       dispatch(changeTopTotalAction(res.total));
+
+      console.log(res)
     })
   }
 }

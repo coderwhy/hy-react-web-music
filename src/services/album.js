@@ -8,7 +8,7 @@ export function getHotAlbums() {
 
 export function getTopAlbums(limit, offset) {
   return request({
-    url: "/top/album",
+    url: "/album/new",
     params: {
       limit,
       offset

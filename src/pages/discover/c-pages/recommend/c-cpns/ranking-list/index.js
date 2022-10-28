@@ -22,9 +22,9 @@ export default memo(function HYRankingList() {
 
   // hooks
   useEffect(() => {
-    dispatch(getTopData(0));
-    dispatch(getTopData(2));
-    dispatch(getTopData(3));
+    dispatch(getTopData(19723756));
+    dispatch(getTopData(3779629));
+    dispatch(getTopData(2884035));
   }, [dispatch])
 
   return (

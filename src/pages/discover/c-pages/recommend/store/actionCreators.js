@@ -72,13 +72,13 @@ export const getTopData = (idx) => {
   return dispatch => {
     getTopList(idx).then(res => {
       switch (idx) {
-        case 0:
+        case 19723756:
           dispatch(changeNewListAction(res));
           break;
-        case 2:
+        case 3779629:
           dispatch(changeOriginListAction(res));
           break;
-        case 3:
+        case 2884035:
           dispatch(changeUpListAction(res));
           break;
         default:
